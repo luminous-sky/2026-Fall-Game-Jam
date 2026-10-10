@@ -2,29 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="1_b80w8"]
 [ext_resource type="Texture2D" uid="uid://njj3fh1rgexx" path="res://icon.svg" id="2_7yo6s"]
+[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="3_v8qbr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_moqhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wa8a"]
 size = Vector2(64, 64)
 
-[node name="TestMap" type="Node2D" unique_id=1056104634]
+[node name="TestMap" type="Node2D" unique_id=1728188768]
 
-[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("1_b80w8")]
+[node name="Player" parent="." unique_id=2083211313 instance=ExtResource("1_b80w8")]
 position = Vector2(67, -196)
 dash_cooldown = null
 
-[node name="Floor" type="StaticBody2D" parent="." unique_id=96959834]
+[node name="Floor" type="StaticBody2D" parent="." unique_id=98453813]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1217506360]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1943631440]
 shape = SubResource("WorldBoundaryShape2D_moqhw")
 
-[node name="Box" type="StaticBody2D" parent="." unique_id=1071118044]
+[node name="Box" type="StaticBody2D" parent="." unique_id=2050364541]
 position = Vector2(296, -35)
 
-[node name="Sprite2D" type="Sprite2D" parent="Box" unique_id=1638522076]
+[node name="Sprite2D" type="Sprite2D" parent="Box" unique_id=786639132]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7yo6s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=696393408]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=1421053398]
 shape = SubResource("RectangleShape2D_2wa8a")
+
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("3_v8qbr")]
+position = Vector2(181, -55)
