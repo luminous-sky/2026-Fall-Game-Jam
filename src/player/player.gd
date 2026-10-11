@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-
+const KILL_Y: float = 800.0
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
 
@@ -17,7 +17,7 @@ const DASH_TIME: float = 0.50
 const DASH_RESISTANCE: float = (DASH_SPEED - SPEED) / DASH_TIME
 
 @export var dash_cooldown: float = 2.0
-
+@export var spawn: Marker2D
 
 ## Grace time, in seconds, before the player cannot jump after falling
 const FALL_GRACE_TIME: float = 0.15
@@ -90,5 +90,11 @@ func _physics_process(delta: float) -> void:
 		can_dash = false
 		current_speed = DASH_SPEED
 		current_fall_speed = -dash_y * DASH_SPEED
-	
+		
+	if global_position.y > KILL_Y:
+		respawn()
 	move_and_slide()
+func respawn() -> void:
+	global_position = spawn.global_position
+	
+	
