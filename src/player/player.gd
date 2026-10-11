@@ -52,6 +52,8 @@ var can_move: bool = true
 	$Camera2D.limit_bottom,
 ]
 
+@onready var default_camera_zoom = $Camera2D.zoom
+
 func _ready() -> void:
 	# Check if the parent is a level to constrain the camera
 	if get_parent() is Level:
@@ -61,6 +63,11 @@ func _ready() -> void:
 		$Camera2D.limit_right = level.right_bound
 		$Camera2D.limit_top = level.upper_bound
 		$Camera2D.limit_bottom = level.lower_bound
+		
+		if level.zoom_override > 0.0:
+			$Camera2D.zoom = level.zoom_override * Vector2(1, 1)
+		else:
+			$Camera2D.zoom = default_camera_zoom
 
 
 func _physics_process(delta: float) -> void:
