@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="1_b80w8"]
 [ext_resource type="Texture2D" uid="uid://njj3fh1rgexx" path="res://icon.svg" id="2_7yo6s"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="3_v8qbr"]
+[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="3_v8qbr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_moqhw"]
 
@@ -13,7 +14,6 @@ size = Vector2(64, 64)
 
 [node name="Player" parent="." unique_id=2083211313 instance=ExtResource("1_b80w8")]
 position = Vector2(67, -196)
-dash_cooldown = null
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=98453813]
 
@@ -32,3 +32,5 @@ shape = SubResource("RectangleShape2D_2wa8a")
 
 [node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("3_v8qbr")]
 position = Vector2(181, -55)
+[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("3_v8qbr")]
+position = Vector2(295, -169)

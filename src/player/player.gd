@@ -29,6 +29,9 @@ var can_jump: bool = true
 # Current dash cooldown time
 var cooldown_time: float = 0.0
 
+# Current launch velocity to be added
+var current_launch: Vector2 = Vector2.ZERO
+
 # Current horizontal movement speed
 var current_speed: float = SPEED
 var can_dash: bool = true
@@ -91,4 +94,16 @@ func _physics_process(delta: float) -> void:
 		current_speed = DASH_SPEED
 		current_fall_speed = -dash_y * DASH_SPEED
 	
+	# Add launch velocity
+	velocity.x += current_launch.x
+	velocity.y += current_launch.y
+	
+	# Gradually reduce launch velocity
+	current_launch.x = move_toward(current_launch.x, 0, Orb.LAUNCH_RESISTANCE * delta)
+	current_launch.y = move_toward(current_launch.y, 0, Orb.LAUNCH_RESISTANCE * delta)
+	
 	move_and_slide()
+	
+	# Reset launch velocity as needed
+	if is_on_floor() or is_on_wall():
+		current_launch = Vector2.ZERO
