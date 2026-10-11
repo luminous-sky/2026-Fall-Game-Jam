@@ -41,6 +41,9 @@ func _input(event: InputEvent) -> void:
 		player_node.can_move = false
 		player_interacting = true
 		$Arrow.visible = true
+		
+		# Darken background
+		$CanvasLayer/Background.visible = true
 	elif event.is_action_released("interact"):
 		# Reset interaction
 		print("released")
@@ -66,6 +69,8 @@ func _input(event: InputEvent) -> void:
 		$Arrow.visible = false
 		$Arrow.rotation_degrees = 0.0
 		arrow_direction = starting_arrow_direction
+		
+		$CanvasLayer/Background.visible = false
 
 
 func _on_body_entered(body: Node2D) -> void:
