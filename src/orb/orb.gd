@@ -54,7 +54,7 @@ func _input(event: InputEvent) -> void:
 		
 		# Increase movement in the y-direction to counter gravity
 		if target_launch.y < 0:
-			target_launch.y *= 2
+			target_launch.y -= Player.GRAVITY
 		
 		player_node.current_launch = target_launch
 		

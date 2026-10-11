@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="2_odbgv"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="3_fmrvw"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="4_bcf81"]
+[ext_resource type="PackedScene" uid="uid://cfl5mj3f5styp" path="res://ui/dash_bar.tscn" id="5_odbgv"]
 
 [node name="lvl1" type="Node2D" unique_id=989410229]
 
@@ -95,3 +96,12 @@ position = Vector2(610, -165)
 
 [node name="Orb2" parent="." unique_id=1002529927 instance=ExtResource("4_bcf81")]
 position = Vector2(164, -149)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=805031185]
+
+[node name="DashBar" parent="CanvasLayer" unique_id=529733850 instance=ExtResource("5_odbgv")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+grow_vertical = 1

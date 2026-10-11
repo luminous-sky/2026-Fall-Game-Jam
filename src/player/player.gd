@@ -19,7 +19,7 @@ const DASH_TIME: float = 0.50
 ## How much the speed decreases by per second after a dash
 const DASH_RESISTANCE: float = (DASH_SPEED - SPEED) / DASH_TIME
 
-@export var dash_cooldown: float = 2.0
+static var dash_cooldown: float = 2.0
 
 ## Grace time, in seconds, before the player cannot jump after falling
 const FALL_GRACE_TIME: float = 0.15
@@ -29,7 +29,7 @@ var fall_time: float = 0.0
 var can_jump: bool = true
 
 # Current dash cooldown time
-var cooldown_time: float = 0.0
+static var cooldown_time: float = 0.0
 
 # Current launch velocity to be added
 var current_launch: Vector2 = Vector2.ZERO
@@ -159,6 +159,7 @@ func _physics_process(delta: float) -> void:
 
 func respawn() -> void:
 	get_tree().reload_current_scene()
+	cooldown_time = 0.0
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
