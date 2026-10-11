@@ -1,6 +1,9 @@
 class_name Orb
 extends Area2D
 
+signal orb_focused
+signal orb_unfocused
+
 
 ## How long it takes the arrow to complete one revolution
 const ARROW_SPEED: float = 2.0
@@ -13,6 +16,7 @@ const LAUNCH_TIME: float = 1.5
 const LAUNCH_RESISTANCE: float = LAUNCH_SPEED / LAUNCH_TIME
 
 var player_interacting: bool = false
+var player_released_scheduled: bool = false
 var player_node: Player = null
 
 # Current direction of the arrow pointer
@@ -44,6 +48,7 @@ func _input(event: InputEvent) -> void:
 		
 		# Darken background
 		$CanvasLayer/Background.visible = true
+		orb_focused.emit()
 	elif event.is_action_released("interact"):
 		# Reset interaction
 		print("released")
@@ -71,6 +76,12 @@ func _input(event: InputEvent) -> void:
 		arrow_direction = starting_arrow_direction
 		
 		$CanvasLayer/Background.visible = false
+		orb_unfocused.emit()
+		
+		# Perform the scheduled _on_body_exited() code as needed
+		if player_released_scheduled:
+			player_node = null
+			player_released_scheduled = false
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -84,4 +95,8 @@ func _on_body_exited(body: Node2D) -> void:
 	if not body is Player:
 		return
 	
-	player_node = null
+	# Fail-safe to prevent the player from getting stuck in the interaction
+	if not player_interacting:
+		player_node = null
+	else:
+		player_released_scheduled = true

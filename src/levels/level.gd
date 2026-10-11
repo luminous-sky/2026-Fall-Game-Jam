@@ -6,3 +6,7 @@ extends Node2D
 @export var right_bound: int = 999999
 @export var upper_bound: int = -999999
 @export var lower_bound: int = 999999
+
+## Overrides the camera's zoom.
+## If the override is set to 0.0, the camera zoom is reset.
+@export var zoom_override: float
