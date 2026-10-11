@@ -1,7 +1,10 @@
 class_name Player
 extends CharacterBody2D
 
-const KILL_Y: float = 800.0
+## The lowest y-level that the player can go to before being respawned
+@export var kill_y: float = 800.0
+
+
 const SPEED: float = 300.0
 const JUMP_VELOCITY: float = -400.0
 
@@ -104,7 +107,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-	if global_position.y > KILL_Y:
+	if global_position.y > kill_y:
 		respawn()
 	
 	# Reset launch velocity as needed
@@ -113,4 +116,4 @@ func _physics_process(delta: float) -> void:
 
 
 func respawn() -> void:
-	global_position = spawn.global_position
+	get_tree().reload_current_scene()
