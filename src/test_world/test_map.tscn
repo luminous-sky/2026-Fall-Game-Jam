@@ -14,7 +14,7 @@ size = Vector2(64, 64)
 [node name="TestMap" type="Node2D" unique_id=1728188768]
 
 [node name="Player" parent="." unique_id=2083211313 instance=ExtResource("1_b80w8")]
-position = Vector2(67, -196)
+position = Vector2(83, -171)
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=98453813]
 position = Vector2(173, 78)
