@@ -20,7 +20,6 @@ const DASH_TIME: float = 0.50
 const DASH_RESISTANCE: float = (DASH_SPEED - SPEED) / DASH_TIME
 
 @export var dash_cooldown: float = 2.0
-@export var spawn: Marker2D
 
 ## Grace time, in seconds, before the player cannot jump after falling
 const FALL_GRACE_TIME: float = 0.15
@@ -42,6 +41,7 @@ var last_direction: float = 0.0
 
 # Current vertical movement speed
 var current_fall_speed: float = 0.0
+var is_landing: bool = false
 
 var can_move: bool = true
 
@@ -66,9 +66,20 @@ func _physics_process(delta: float) -> void:
 		if fall_time >= FALL_GRACE_TIME:
 			can_jump = false
 	else:
+		# Check if a landing was done
+		if fall_time > 0:
+			is_landing = true
+			
+			if last_direction >= 0:
+				$AnimatedSprite2D.play("land_right")
+			else:
+				$AnimatedSprite2D.play("land_left")
+		
 		# Reset the jump grace period
 		can_jump = true
 		fall_time = 0.0
+		
+		current_fall_speed = 0.0
 	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and can_jump:
@@ -84,8 +95,27 @@ func _physics_process(delta: float) -> void:
 		# Gradually reduce the dash speed to the normal speed
 		if current_speed > SPEED:
 			current_speed = move_toward(current_speed, SPEED, DASH_RESISTANCE*delta)
+		
+		# Play animations
+		if not velocity.y and not is_landing:
+			var anim_name: String = "run_"
+			if current_speed > SPEED:
+				anim_name = "dash_"
+			
+			if direction > 0:
+				anim_name += "right"
+			else:
+				anim_name += "left"
+			
+			$AnimatedSprite2D.play(anim_name)
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
+		
+		if not is_landing:
+			if last_direction >= 0:
+				$AnimatedSprite2D.play("idle_right")
+			else:
+				$AnimatedSprite2D.play("idle_left")
 	
 	# Set y velocity
 	velocity.y = current_fall_speed
@@ -100,6 +130,18 @@ func _physics_process(delta: float) -> void:
 	# Add launch velocity
 	velocity.x += current_launch.x
 	velocity.y += current_launch.y
+	
+	# Play vertical animations
+	if velocity.y < 0:
+		if last_direction >= 0:
+			$AnimatedSprite2D.play("jump_right")
+		else:
+			$AnimatedSprite2D.play("jump_left")
+	elif velocity.y > 0:
+		if last_direction >= 0:
+			$AnimatedSprite2D.play("fall_right")
+		else:
+			$AnimatedSprite2D.play("fall_left")
 	
 	# Gradually reduce launch velocity
 	current_launch.x = move_toward(current_launch.x, 0, Orb.LAUNCH_RESISTANCE * delta)
@@ -117,3 +159,8 @@ func _physics_process(delta: float) -> void:
 
 func respawn() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_landing:
+		is_landing = false
