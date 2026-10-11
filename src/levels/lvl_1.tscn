@@ -29,16 +29,13 @@ position = Vector2(-226, 123)
 position = Vector2(-199, 123)
 
 [node name="OneWayPlatform3" parent="." unique_id=62021301 instance=ExtResource("3_fmrvw")]
-position = Vector2(-55, -101)
+position = Vector2(-55, -93)
 
 [node name="OneWayPlatform7" parent="." unique_id=1411032844 instance=ExtResource("3_fmrvw")]
-position = Vector2(-30, -101)
+position = Vector2(-5, -93)
 
 [node name="OneWayPlatform4" parent="." unique_id=1726882723 instance=ExtResource("3_fmrvw")]
 position = Vector2(-172, 123)
-
-[node name="OneWayPlatform5" parent="." unique_id=487407367 instance=ExtResource("3_fmrvw")]
-position = Vector2(-101, -14)
 
 [node name="OneWayPlatform6" parent="." unique_id=833004973 instance=ExtResource("3_fmrvw")]
 position = Vector2(-128, -14)
@@ -47,46 +44,31 @@ position = Vector2(-128, -14)
 position = Vector2(69, -49)
 
 [node name="OneWayPlatform10" parent="." unique_id=78105848 instance=ExtResource("3_fmrvw")]
-position = Vector2(410, -229)
-
-[node name="OneWayPlatform11" parent="." unique_id=1412041301 instance=ExtResource("3_fmrvw")]
-position = Vector2(347, -140)
+position = Vector2(432, -224)
 
 [node name="OneWayPlatform13" parent="." unique_id=1883660169 instance=ExtResource("3_fmrvw")]
 position = Vector2(293, -140)
 
 [node name="OneWayPlatform14" parent="." unique_id=2122206004 instance=ExtResource("3_fmrvw")]
-position = Vector2(320, -140)
-
-[node name="OneWayPlatform15" parent="." unique_id=497055008 instance=ExtResource("3_fmrvw")]
-position = Vector2(95, -49)
-
-[node name="OneWayPlatform16" parent="." unique_id=172657921 instance=ExtResource("3_fmrvw")]
-position = Vector2(511, -87)
+position = Vector2(342, -140)
 
 [node name="OneWayPlatform17" parent="." unique_id=1072806377 instance=ExtResource("3_fmrvw")]
-position = Vector2(484, -87)
-
-[node name="OneWayPlatform18" parent="." unique_id=1908172708 instance=ExtResource("3_fmrvw")]
-position = Vector2(538, -87)
+position = Vector2(522, -87)
 
 [node name="OneWayPlatform19" parent="." unique_id=1112623072 instance=ExtResource("3_fmrvw")]
 position = Vector2(670, -264)
 
 [node name="OneWayPlatform12" parent="." unique_id=1151485212 instance=ExtResource("3_fmrvw")]
-position = Vector2(383, -229)
+position = Vector2(383, -224)
 
 [node name="OneWayPlatform20" parent="." unique_id=617677280 instance=ExtResource("3_fmrvw")]
-position = Vector2(724, -354)
-
-[node name="OneWayPlatform21" parent="." unique_id=1793088408 instance=ExtResource("3_fmrvw")]
-position = Vector2(800, -416)
+position = Vector2(725, -346)
 
 [node name="OneWayPlatform22" parent="." unique_id=1183010895 instance=ExtResource("3_fmrvw")]
-position = Vector2(773, -416)
+position = Vector2(817, -416)
 
 [node name="OneWayPlatform23" parent="." unique_id=930930681 instance=ExtResource("3_fmrvw")]
-position = Vector2(746, -416)
+position = Vector2(768, -416)
 
 [node name="OneWayPlatform24" parent="." unique_id=833346469 instance=ExtResource("3_fmrvw")]
 position = Vector2(719, -416)
