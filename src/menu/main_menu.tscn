@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://bap46m1qc7wvs"]
+
+[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_chmv6"]
+[ext_resource type="Script" uid="uid://bim0dx8jk46iv" path="res://menu/main_menu.gd" id="1_o5w3e"]
+[ext_resource type="Texture2D" uid="uid://blih03joc84y2" path="res://assets/world/button_norm.png" id="2_f5okj"]
+[ext_resource type="Script" uid="uid://byd37a22a36x" path="res://menu/start_button.gd" id="3_1x3cv"]
+[ext_resource type="Script" uid="uid://dx8gio1ordf1p" path="res://menu/credits_button.gd" id="5_jc45y"]
+
+[sub_resource type="SystemFont" id="SystemFont_moqhw"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="SystemFont" id="SystemFont_2wa8a"]
+font_names = PackedStringArray("Monospace")
+font_weight = 500
+
+[node name="Main Menu" type="Control" unique_id=265538652 node_paths=PackedStringArray("default_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5w3e")
+default_button = NodePath("StartButton")
+
+[node name="Background" type="TextureRect" parent="." unique_id=158455079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_chmv6")
+
+[node name="Shade" type="ColorRect" parent="Background" unique_id=1386424257]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.64705884)
+
+[node name="StartButton" type="Button" parent="." unique_id=1848703030]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 248.0
+offset_right = 112.0
+offset_bottom = 306.0
+grow_horizontal = 2
+focus_neighbor_bottom = NodePath("../CreditsButton")
+theme_override_colors/font_color = Color(0.6745098, 0.6784314, 0, 1)
+theme_override_colors/font_focus_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_fonts/font = SubResource("SystemFont_moqhw")
+theme_override_font_sizes/font_size = 36
+text = "Start Game"
+flat = true
+script = ExtResource("3_1x3cv")
+next_scene = "uid://bq7mtp314l80j"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="StartButton" unique_id=1334905078]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f5okj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="CreditsButton" type="Button" parent="." unique_id=1523503524]
+z_index = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -112.0
+offset_top = 368.0
+offset_right = 112.0
+offset_bottom = 426.0
+grow_horizontal = 2
+focus_neighbor_top = NodePath("../StartButton")
+theme_override_colors/font_color = Color(0.6745098, 0.6784314, 0, 1)
+theme_override_colors/font_focus_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_pressed_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_hover_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.40392157, 0.5372549, 0.7490196, 1)
+theme_override_fonts/font = SubResource("SystemFont_moqhw")
+theme_override_font_sizes/font_size = 36
+text = "Credits"
+flat = true
+script = ExtResource("5_jc45y")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CreditsButton" unique_id=1747734956]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_f5okj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="Credits" type="ColorRect" parent="." unique_id=1947698844]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -376.5
+offset_top = 32.0
+offset_right = 376.5
+offset_bottom = 352.0
+grow_horizontal = 2
+color = Color(0.33068517, 0.6165579, 0.9458074, 1)
+
+[node name="Team" type="Label" parent="Credits" unique_id=1545964613]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -137.0
+offset_top = 11.0
+offset_right = 137.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_2wa8a")
+theme_override_font_sizes/font_size = 24
+text = "Team Luminescence⁻²"
+horizontal_alignment = 1
+
+[node name="Members" type="Label" parent="Credits" unique_id=298846555]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -166.0
+offset_top = 51.0
+offset_right = 166.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_2wa8a")
+theme_override_font_sizes/font_size = 20
+text = "2026 YGDA Fall Game Jam"
+horizontal_alignment = 1
+
+[node name="Thanks" type="Label" parent="Credits" unique_id=1109446438]
+custom_maximum_size = Vector2(720, -1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -360.0
+offset_top = 96.0
+offset_right = 360.0
+offset_bottom = 307.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("SystemFont_2wa8a")
+theme_override_font_sizes/font_size = 20
+text = "Thank you to the officers of YGDA for their support during the Game Jam!
+
+Made in Godot from the amazing work of volunteers! Licensing information: https://godotengine.org/license/
+
+And of course, thank you to you for playing our game!"
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[connection signal="mouse_entered" from="StartButton" to="StartButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="CreditsButton" to="CreditsButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_pressed"]
