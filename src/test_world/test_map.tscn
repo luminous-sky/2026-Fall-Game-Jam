@@ -5,20 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="3_v8qbr"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_gqw3d"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_moqhw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qbr"]
+size = Vector2(257, 123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wa8a"]
 size = Vector2(64, 64)
 
 [node name="TestMap" type="Node2D" unique_id=1728188768]
 
-[node name="Player" parent="." unique_id=2083211313 instance=ExtResource("1_b80w8")]
+[node name="Player" parent="." unique_id=2083211313 node_paths=PackedStringArray("spawn") instance=ExtResource("1_b80w8")]
 position = Vector2(67, -196)
+spawn = NodePath("../spawn")
 
 [node name="Floor" type="StaticBody2D" parent="." unique_id=98453813]
+position = Vector2(173, 78)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=1943631440]
-shape = SubResource("WorldBoundaryShape2D_moqhw")
+position = Vector2(-159.5, 51.5)
+shape = SubResource("RectangleShape2D_v8qbr")
 
 [node name="Box" type="StaticBody2D" parent="." unique_id=2050364541]
 position = Vector2(296, -35)
@@ -30,8 +34,11 @@ texture = ExtResource("2_7yo6s")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box" unique_id=1421053398]
 shape = SubResource("RectangleShape2D_2wa8a")
 
-[node name="OneWayPlatform" parent="." unique_id=933172722 instance=ExtResource("4_gqw3d")]
-position = Vector2(181, -55)
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("3_v8qbr")]
+position = Vector2(172, -49)
+
+[node name="spawn" type="Marker2D" parent="." unique_id=2139864695]
+position = Vector2(2, 38)
 
 [node name="Orb" parent="." unique_id=272773964 instance=ExtResource("3_v8qbr")]
 position = Vector2(295, -169)
