@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://deoxfbibexelg"]
+
+[ext_resource type="Texture2D" uid="uid://dsw27i730w37t" path="res://assets/world/orb.png" id="1_kjlvm"]
+[ext_resource type="Script" uid="uid://ch8nvexhaoy4e" path="res://orb/orb.gd" id="1_q0apk"]
+[ext_resource type="Texture2D" uid="uid://dtlbieqdibvn8" path="res://assets/world/arrow.png" id="3_nfcmq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_moqhw"]
+radius = 56.0
+
+[node name="Orb" type="Area2D" unique_id=272773964]
+script = ExtResource("1_q0apk")
+
+[node name="Orb" type="Sprite2D" parent="." unique_id=1124607780]
+texture = ExtResource("1_kjlvm")
+
+[node name="Arrow" type="Node2D" parent="." unique_id=1848784546]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=945913262]
+position = Vector2(3, -9)
+texture = ExtResource("3_nfcmq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291727933]
+shape = SubResource("CircleShape2D_moqhw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
