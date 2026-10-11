@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="1_raxm7"]
 [ext_resource type="Texture2D" uid="uid://s6sq5kmnfqg0" path="res://assets/world/tiles/icy_corner.png" id="3_g1dg4"]
 [ext_resource type="Texture2D" uid="uid://be7dmy4jlbdv8" path="res://assets/world/tiles/snowy_corner.png" id="5_s1bpp"]
+[ext_resource type="Script" uid="uid://dhv7xlqyhiu5o" path="res://levels/end_area.gd" id="7_76ugp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_py88r"]
 texture = ExtResource("1_qyb5k")
@@ -148,7 +149,31 @@ shape = SubResource("WorldBoundaryShape2D_g1dg4")
 
 [node name="EndArea" type="Area2D" parent="." unique_id=1028292210]
 position = Vector2(1018, -298)
+script = ExtResource("7_76ugp")
+next_scene = "uid://2b26rfjwxgn1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea" unique_id=1077186310]
 position = Vector2(12.5, -129.5)
 shape = SubResource("RectangleShape2D_w81ou")
+
+[node name="JumpLabel" type="RichTextLabel" parent="." unique_id=1070422318]
+offset_left = 381.0
+offset_top = -341.0
+offset_right = 594.0
+offset_bottom = -295.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Press [color=GOLD]C[/color] to [color=GOLD]Jump![/color]"
+horizontal_alignment = 1
+
+[node name="DashLabel" type="RichTextLabel" parent="." unique_id=1936433046]
+offset_left = 719.0
+offset_top = -416.0
+offset_right = 926.0
+offset_bottom = -285.0
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "Press [color=GOLD]X[/color] while moving to [color=GOLD]Dash![/color]"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="EndArea" to="EndArea" method="_on_body_entered"]
