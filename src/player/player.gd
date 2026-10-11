@@ -140,7 +140,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and can_dash:
 		var dash_y: float = int(Input.is_action_pressed("dash_up"))
 		
-		can_dash = false
+		# Only disable dashing if the player dashes in the air
+		if not is_on_floor():
+			can_dash = false
 		current_speed = DASH_SPEED
 		current_fall_speed = -dash_y * DASH_SPEED
 		
