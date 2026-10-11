@@ -150,7 +150,7 @@ shape = SubResource("WorldBoundaryShape2D_g1dg4")
 [node name="EndArea" type="Area2D" parent="." unique_id=1028292210]
 position = Vector2(1018, -298)
 script = ExtResource("7_76ugp")
-next_scene = "uid://2b26rfjwxgn1"
+next_scene = "uid://dhqkhoi8gq520"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndArea" unique_id=1077186310]
 position = Vector2(12.5, -129.5)
