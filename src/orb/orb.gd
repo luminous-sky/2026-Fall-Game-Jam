@@ -54,9 +54,12 @@ func _input(event: InputEvent) -> void:
 		
 		# Increase movement in the y-direction to counter gravity
 		if target_launch.y < 0:
-			target_launch.y -= Player.GRAVITY
+			target_launch.y -= (Player.GRAVITY / 2)
 		
 		player_node.current_launch = target_launch
+		
+		# Reset player fall speed to make launches more consistent
+		player_node.current_fall_speed = 0.0
 		
 		player_node.can_move = true
 		player_interacting = false
@@ -76,4 +79,4 @@ func _on_body_exited(body: Node2D) -> void:
 	if not body is Player:
 		return
 	
-	player_node = body
+	player_node = null
