@@ -5,14 +5,14 @@ extends CharacterBody2D
 @export var kill_y: float = 800.0
 
 
-const SPEED: float = 300.0
+const SPEED: float = 200.0
 const JUMP_VELOCITY: float = -400.0
 
 ## THe player's gravity
-const GRAVITY: float = 900.0
+const GRAVITY: float = 750.0
 
 ## How fast the player moves when dashing
-const DASH_SPEED: float = 600.0
+const DASH_SPEED: float = 350.0
 
 ## How long the dash lasts for, in seconds
 const DASH_TIME: float = 0.50

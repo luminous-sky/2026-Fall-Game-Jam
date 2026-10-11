@@ -6,7 +6,8 @@ extends Area2D
 const ARROW_SPEED: float = 2.0
 const ARROW_DEG_SPEED: float = 360.0 / ARROW_SPEED
 
-const LAUNCH_SPEED: float = 400.0
+# BUG: Dashing after using an orb allows you to launch very high
+const LAUNCH_SPEED: float = 300.0
 const LAUNCH_TIME: float = 1.5
 ## The amount to reduce the speed by every second until it is 0
 const LAUNCH_RESISTANCE: float = LAUNCH_SPEED / LAUNCH_TIME

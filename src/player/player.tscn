@@ -398,6 +398,7 @@ size = Vector2(12, 26)
 script = ExtResource("1_rkbax")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1787343970]
+zoom = Vector2(1.2, 1.2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1831770523]
 sprite_frames = SubResource("SpriteFrames_moqhw")

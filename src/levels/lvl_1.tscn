@@ -15,12 +15,6 @@ texture = ExtResource("1_x3lfk")
 [node name="Player" parent="." unique_id=1360005317 instance=ExtResource("2_odbgv")]
 position = Vector2(-222, 95)
 
-[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=676531062]
-limit_left = -240
-limit_top = 240
-limit_right = -135
-limit_bottom = 135
-
 [node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("3_fmrvw")]
 position = Vector2(-226, 123)
 
