@@ -126,10 +126,17 @@ func _physics_process(delta: float) -> void:
 		can_dash = false
 		current_speed = DASH_SPEED
 		current_fall_speed = -dash_y * DASH_SPEED
+		
+		# Launch velocity is cancelled out
+		current_launch = Vector2.ZERO
 	
 	# Add launch velocity
 	velocity.x += current_launch.x
 	velocity.y += current_launch.y
+	
+	# Clamp final velocity
+	#if abs(velocity.y) >= 600.0:
+		#velocity.y = sign(velocity.y) * 600.0
 	
 	# Play vertical animations
 	if velocity.y < 0:
