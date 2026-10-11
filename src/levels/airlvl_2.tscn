@@ -1,11 +1,17 @@
 [gd_scene format=3 uid="uid://7onbjkkvrr3k"]
 
 [ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_m3yk5"]
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_ucysi"]
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="2_ucysi"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="3_qlmcj"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="4_dcjti"]
 
 [node name="airlvl2" type="Node2D" unique_id=195146555]
+script = ExtResource("1_ucysi")
+left_bound = -768
+right_bound = 768
+upper_bound = -432
+lower_bound = 432
 
 [node name="bg" type="Sprite2D" parent="." unique_id=712318020]
 scale = Vector2(3.2, 3.2)
@@ -42,13 +48,13 @@ position = Vector2(124, -114)
 position = Vector2(351, -45)
 
 [node name="OneWayPlatform10" parent="." unique_id=1993175912 instance=ExtResource("3_qlmcj")]
-position = Vector2(741, -260)
+position = Vector2(744, -260)
 
 [node name="OneWayPlatform11" parent="." unique_id=1816583097 instance=ExtResource("3_qlmcj")]
-position = Vector2(691, -260)
+position = Vector2(696, -260)
 
 [node name="OneWayPlatform12" parent="." unique_id=615372114 instance=ExtResource("3_qlmcj")]
-position = Vector2(642, -260)
+position = Vector2(648, -260)
 
 [node name="Orb" parent="." unique_id=272773964 instance=ExtResource("4_dcjti")]
 position = Vector2(-210, -142)

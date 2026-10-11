@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b43apte5jl588"]
 
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_eibbu"]
 [ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_ux5ys"]
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="2_6o41n"]
 [ext_resource type="Texture2D" uid="uid://cix2yxyc3ra5n" path="res://assets/world/tiles/icy.png" id="3_tvhyq"]
@@ -115,6 +116,11 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eibbu")
 
 [node name="ground2airlvl" type="Node2D" unique_id=705614531]
+script = ExtResource("1_eibbu")
+left_bound = 0
+right_bound = 790
+upper_bound = -650
+lower_bound = 220
 
 [node name="bg" type="Sprite2D" parent="." unique_id=913217523]
 position = Vector2(33, -211)
