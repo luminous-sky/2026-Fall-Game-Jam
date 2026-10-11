@@ -45,6 +45,23 @@ var is_landing: bool = false
 
 var can_move: bool = true
 
+@onready var default_camera_bounds: Array = [
+	$Camera2D.limit_left,
+	$Camera2D.limit_right,
+	$Camera2D.limit_top,
+	$Camera2D.limit_bottom,
+]
+
+func _ready() -> void:
+	# Check if the parent is a level to constrain the camera
+	if get_parent() is Level:
+		var level: Level = get_parent()
+		
+		$Camera2D.limit_left = level.left_bound
+		$Camera2D.limit_right = level.right_bound
+		$Camera2D.limit_top = level.upper_bound
+		$Camera2D.limit_bottom = level.lower_bound
+
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
@@ -123,7 +140,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and can_dash:
 		var dash_y: float = int(Input.is_action_pressed("dash_up"))
 		
-		can_dash = false
+		# Only disable dashing if the player dashes in the air
+		if not is_on_floor():
+			can_dash = false
 		current_speed = DASH_SPEED
 		current_fall_speed = -dash_y * DASH_SPEED
 		

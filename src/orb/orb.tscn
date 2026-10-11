@@ -23,5 +23,16 @@ texture = ExtResource("3_nfcmq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291727933]
 shape = SubResource("CircleShape2D_moqhw")
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2117505525]
+
+[node name="Background" type="ColorRect" parent="CanvasLayer" unique_id=1427436886]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
