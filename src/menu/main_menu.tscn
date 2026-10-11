@@ -63,7 +63,7 @@ theme_override_font_sizes/font_size = 36
 text = "Start Game"
 flat = true
 script = ExtResource("3_1x3cv")
-next_scene = "uid://bq7mtp314l80j"
+next_scene = "uid://2b26rfjwxgn1"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="StartButton" unique_id=1334905078]
 z_index = -1
