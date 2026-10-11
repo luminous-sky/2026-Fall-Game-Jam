@@ -1,4 +1,3 @@
-class_name MainMenuButton
 extends Button
 
 @export_file("*.tscn") var next_scene: String
