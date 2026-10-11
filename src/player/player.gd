@@ -45,6 +45,23 @@ var is_landing: bool = false
 
 var can_move: bool = true
 
+@onready var default_camera_bounds: Array = [
+	$Camera2D.limit_left,
+	$Camera2D.limit_right,
+	$Camera2D.limit_top,
+	$Camera2D.limit_bottom,
+]
+
+func _ready() -> void:
+	# Check if the parent is a level to constrain the camera
+	if get_parent() is Level:
+		var level: Level = get_parent()
+		
+		$Camera2D.limit_left = level.left_bound
+		$Camera2D.limit_right = level.right_bound
+		$Camera2D.limit_top = level.upper_bound
+		$Camera2D.limit_bottom = level.lower_bound
+
 
 func _physics_process(delta: float) -> void:
 	if not can_move:

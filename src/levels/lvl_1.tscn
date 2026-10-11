@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://2b26rfjwxgn1"]
 
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_fmrvw"]
 [ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_x3lfk"]
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="2_odbgv"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="3_fmrvw"]
@@ -7,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cfl5mj3f5styp" path="res://ui/dash_bar.tscn" id="5_odbgv"]
 
 [node name="lvl1" type="Node2D" unique_id=989410229]
+script = ExtResource("1_fmrvw")
+left_bound = -235
+right_bound = 815
+upper_bound = -535
+lower_bound = 133
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1888593502]
 position = Vector2(287.75006, -200.00003)
