@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://4cqsxvjrdwps"]
+
+[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_okdh5"]
+[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="2_clg6b"]
+[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="3_t6wp4"]
+[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="4_bcbm8"]
+
+[node name="lvl1" type="Node2D" unique_id=989410229]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1656993787]
+position = Vector2(158, -91)
+scale = Vector2(2.6109376, 2.8157408)
+texture = ExtResource("1_okdh5")
+
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("2_clg6b")]
+position = Vector2(-433, 256)
+
+[node name="OneWayPlatform2" parent="." unique_id=67469332 instance=ExtResource("2_clg6b")]
+position = Vector2(-369, 254)
+
+[node name="OneWayPlatform3" parent="." unique_id=62021301 instance=ExtResource("2_clg6b")]
+position = Vector2(-305, 253)
+
+[node name="OneWayPlatform4" parent="." unique_id=1726882723 instance=ExtResource("2_clg6b")]
+position = Vector2(-167, 172)
+
+[node name="OneWayPlatform5" parent="." unique_id=487407367 instance=ExtResource("2_clg6b")]
+position = Vector2(-166, 63)
+
+[node name="OneWayPlatform6" parent="." unique_id=833004973 instance=ExtResource("2_clg6b")]
+position = Vector2(-20, 9)
+
+[node name="OneWayPlatform7" parent="." unique_id=2100504597 instance=ExtResource("2_clg6b")]
+position = Vector2(147, -18)
+
+[node name="OneWayPlatform8" parent="." unique_id=1916250561 instance=ExtResource("2_clg6b")]
+position = Vector2(158, -169)
+
+[node name="OneWayPlatform9" parent="." unique_id=1795874593 instance=ExtResource("2_clg6b")]
+position = Vector2(321, -102)
+
+[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("3_t6wp4")]
+position = Vector2(-305, 134)
+
+[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("4_bcbm8")]
+position = Vector2(-402, 160)

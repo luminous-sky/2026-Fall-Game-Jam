@@ -9,8 +9,8 @@
 [node name="lvl1" type="Node2D" unique_id=989410229]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1888593502]
-position = Vector2(287.75006, -200.00003)
-scale = Vector2(2.1885417, 2.4888887)
+position = Vector2(771.5741, -509.50003)
+scale = Vector2(4.2044754, 4.7814813)
 texture = ExtResource("1_x3lfk")
 
 [node name="Player" parent="." unique_id=1360005317 instance=ExtResource("2_odbgv")]
