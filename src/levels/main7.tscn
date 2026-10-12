@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://7onbjkkvrr3k"]
+
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_tiqm2"]
+[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="2_x5kvc"]
+[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="3_je8ov"]
+[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_4yi4c"]
+[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="5_wup6e"]
+
+[node name="airlvl2" type="Node2D" unique_id=195146555]
+script = ExtResource("1_tiqm2")
+left_bound = -768
+right_bound = 768
+upper_bound = -432
+lower_bound = 432
+
+[node name="bg" type="Sprite2D" parent="." unique_id=712318020]
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("2_x5kvc")
+
+[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("3_je8ov")]
+position = Vector2(-731, -63)
+
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("4_4yi4c")]
+position = Vector2(-746, -27)
+
+[node name="OneWayPlatform2" parent="." unique_id=1843894360 instance=ExtResource("4_4yi4c")]
+position = Vector2(-2106, -235)
+
+[node name="OneWayPlatform3" parent="." unique_id=296817487 instance=ExtResource("4_4yi4c")]
+position = Vector2(-697, -27)
+
+[node name="OneWayPlatform4" parent="." unique_id=1810266545 instance=ExtResource("4_4yi4c")]
+position = Vector2(-522, -85)
+
+[node name="OneWayPlatform5" parent="." unique_id=312986867 instance=ExtResource("4_4yi4c")]
+position = Vector2(-398, 42)
+
+[node name="OneWayPlatform6" parent="." unique_id=2025108565 instance=ExtResource("4_4yi4c")]
+position = Vector2(-311, -28)
+
+[node name="OneWayPlatform7" parent="." unique_id=1374380378 instance=ExtResource("4_4yi4c")]
+position = Vector2(224, -179)
+
+[node name="OneWayPlatform8" parent="." unique_id=1521779629 instance=ExtResource("4_4yi4c")]
+position = Vector2(124, -114)
+
+[node name="OneWayPlatform9" parent="." unique_id=1208146344 instance=ExtResource("4_4yi4c")]
+position = Vector2(351, -45)
+
+[node name="OneWayPlatform10" parent="." unique_id=1993175912 instance=ExtResource("4_4yi4c")]
+position = Vector2(744, -260)
+
+[node name="OneWayPlatform11" parent="." unique_id=1816583097 instance=ExtResource("4_4yi4c")]
+position = Vector2(696, -260)
+
+[node name="OneWayPlatform12" parent="." unique_id=615372114 instance=ExtResource("4_4yi4c")]
+position = Vector2(648, -260)
+
+[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("5_wup6e")]
+position = Vector2(-210, -142)
+
+[node name="Orb2" parent="." unique_id=1412868706 instance=ExtResource("5_wup6e")]
+position = Vector2(442, -110)
