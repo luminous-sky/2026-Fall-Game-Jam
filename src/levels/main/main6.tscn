@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="3_6vm0g"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_81c25"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="5_b5tfy"]
+[ext_resource type="PackedScene" uid="uid://cdl6jwa2b4s" path="res://platforms/moving_platform.tscn" id="6_k8h4m"]
+[ext_resource type="PackedScene" uid="uid://cla3ludyds7q0" path="res://crystals/shard.tscn" id="7_6vm0g"]
 
 [node name="Main6" type="Node2D" unique_id=989410229]
 script = ExtResource("1_0qq3p")
@@ -28,9 +30,6 @@ position = Vector2(-222, 95)
 [node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("4_81c25")]
 position = Vector2(-226, 123)
 
-[node name="OneWayPlatform2" parent="." unique_id=67469332 instance=ExtResource("4_81c25")]
-position = Vector2(-199, 123)
-
 [node name="OneWayPlatform3" parent="." unique_id=62021301 instance=ExtResource("4_81c25")]
 position = Vector2(-55, -93)
 
@@ -38,7 +37,7 @@ position = Vector2(-55, -93)
 position = Vector2(-5, -93)
 
 [node name="OneWayPlatform4" parent="." unique_id=1726882723 instance=ExtResource("4_81c25")]
-position = Vector2(-172, 123)
+position = Vector2(-177, 123)
 
 [node name="OneWayPlatform6" parent="." unique_id=833004973 instance=ExtResource("4_81c25")]
 position = Vector2(-128, -14)
@@ -46,23 +45,8 @@ position = Vector2(-128, -14)
 [node name="OneWayPlatform9" parent="." unique_id=1795874593 instance=ExtResource("4_81c25")]
 position = Vector2(69, -49)
 
-[node name="OneWayPlatform10" parent="." unique_id=78105848 instance=ExtResource("4_81c25")]
-position = Vector2(432, -224)
-
-[node name="OneWayPlatform13" parent="." unique_id=1883660169 instance=ExtResource("4_81c25")]
-position = Vector2(293, -140)
-
-[node name="OneWayPlatform14" parent="." unique_id=2122206004 instance=ExtResource("4_81c25")]
-position = Vector2(342, -140)
-
-[node name="OneWayPlatform17" parent="." unique_id=1072806377 instance=ExtResource("4_81c25")]
-position = Vector2(522, -87)
-
 [node name="OneWayPlatform19" parent="." unique_id=1112623072 instance=ExtResource("4_81c25")]
 position = Vector2(670, -264)
-
-[node name="OneWayPlatform12" parent="." unique_id=1151485212 instance=ExtResource("4_81c25")]
-position = Vector2(383, -224)
 
 [node name="OneWayPlatform20" parent="." unique_id=617677280 instance=ExtResource("4_81c25")]
 position = Vector2(725, -346)
@@ -79,11 +63,15 @@ position = Vector2(719, -416)
 [node name="Orb" parent="." unique_id=272773964 instance=ExtResource("5_b5tfy")]
 position = Vector2(-182, 87)
 
-[node name="Orb3" parent="." unique_id=1492708581 instance=ExtResource("5_b5tfy")]
-position = Vector2(325, -367)
-
 [node name="Orb4" parent="." unique_id=26887582 instance=ExtResource("5_b5tfy")]
-position = Vector2(610, -165)
+position = Vector2(571, -186)
 
 [node name="Orb2" parent="." unique_id=1002529927 instance=ExtResource("5_b5tfy")]
-position = Vector2(164, -149)
+position = Vector2(164, -166)
+
+[node name="MovingPlatform" parent="." unique_id=1441206593 instance=ExtResource("6_k8h4m")]
+position = Vector2(224, -87)
+
+[node name="Shard" parent="." unique_id=509227634 instance=ExtResource("7_6vm0g")]
+position = Vector2(768, -447)
+next_scene = "uid://7onbjkkvrr3k"

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="6_3ymuw"]
 [ext_resource type="PackedScene" uid="uid://8lu4be188f5m" path="res://platforms/long_one_way_platform.tscn" id="7_aus3q"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="7_tguba"]
+[ext_resource type="PackedScene" uid="uid://cla3ludyds7q0" path="res://crystals/shard.tscn" id="9_26sf2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urlp7"]
 texture = ExtResource("4_yf4mh")
@@ -157,3 +158,7 @@ position = Vector2(722, -215)
 
 [node name="Orb" parent="." unique_id=272773964 instance=ExtResource("7_tguba")]
 position = Vector2(492, -67)
+
+[node name="Shard" parent="." unique_id=509227634 instance=ExtResource("9_26sf2")]
+position = Vector2(746, -249)
+next_scene = "uid://2b26rfjwxgn1"

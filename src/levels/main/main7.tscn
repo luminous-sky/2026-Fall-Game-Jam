@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://7onbjkkvrr3k"]
+
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_raaox"]
+[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="2_oyvjy"]
+[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="3_w8w5p"]
+[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_kip6a"]
+[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="5_8863b"]
+[ext_resource type="PackedScene" uid="uid://cla3ludyds7q0" path="res://crystals/shard.tscn" id="6_n4550"]
+
+[node name="Main7" type="Node2D" unique_id=195146555]
+script = ExtResource("1_raaox")
+left_bound = -910
+right_bound = 910
+upper_bound = -521
+lower_bound = 329
+zoom_override = 1.2
+current_area = 1
+
+[node name="Background" type="Sprite2D" parent="." unique_id=712318020]
+position = Vector2(0, -95.999985)
+scale = Vector2(7, 7)
+texture = ExtResource("2_oyvjy")
+region_enabled = true
+region_rect = Rect2(220, 0, 260, 121.5)
+
+[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("3_w8w5p")]
+position = Vector2(-731, -63)
+
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("4_kip6a")]
+position = Vector2(-746, -27)
+
+[node name="OneWayPlatform3" parent="." unique_id=296817487 instance=ExtResource("4_kip6a")]
+position = Vector2(-697, -27)
+
+[node name="OneWayPlatform4" parent="." unique_id=1810266545 instance=ExtResource("4_kip6a")]
+position = Vector2(-522, -85)
+
+[node name="OneWayPlatform5" parent="." unique_id=312986867 instance=ExtResource("4_kip6a")]
+position = Vector2(-354, 41)
+
+[node name="OneWayPlatform8" parent="." unique_id=1521779629 instance=ExtResource("4_kip6a")]
+position = Vector2(124, -114)
+
+[node name="OneWayPlatform9" parent="." unique_id=1208146344 instance=ExtResource("4_kip6a")]
+position = Vector2(328, -45)
+
+[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("5_8863b")]
+position = Vector2(-216, -65)
+
+[node name="Orb2" parent="." unique_id=1412868706 instance=ExtResource("5_8863b")]
+position = Vector2(427, -104)
+
+[node name="Shard" parent="." unique_id=509227634 instance=ExtResource("6_n4550")]
+position = Vector2(681, -93)
