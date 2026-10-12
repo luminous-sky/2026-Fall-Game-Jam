@@ -7,8 +7,9 @@ func _on_pressed() -> void:
 	if not next_scene:
 		return
 	
-	get_tree().change_scene_to_file(next_scene)
+	Transition.transition_scene(next_scene)
 
 
+# TODO: Fix the mouse not selecting the button
 func _on_mouse_entered() -> void:
 	grab_focus()

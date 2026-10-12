@@ -18,6 +18,7 @@ config/icon="uid://dsw27i730w37t"
 [autoload]
 
 Transition="*uid://vjnbxmdox3ho"
+GameData="*uid://bhtqmqlbv3j7g"
 
 [display]
 

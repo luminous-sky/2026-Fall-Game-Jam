@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="6_lw0yu"]
 [ext_resource type="Script" uid="uid://dhv7xlqyhiu5o" path="res://levels/end_area.gd" id="7_47a12"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="8_mj76i"]
-[ext_resource type="Script" uid="uid://b0q88vqpewd78" path="res://levels/level_4_orb_label.gd" id="9_mdw0g"]
+[ext_resource type="Script" uid="uid://b0q88vqpewd78" path="res://levels/intro/level_3_orb_label.gd" id="9_mdw0g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_py88r"]
 texture = ExtResource("2_mdw0g")
