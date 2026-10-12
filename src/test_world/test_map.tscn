@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://njj3fh1rgexx" path="res://icon.svg" id="2_7yo6s"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="3_v8qbr"]
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_gqw3d"]
+[ext_resource type="PackedScene" uid="uid://cdl6jwa2b4s" path="res://platforms/movingplatform.tscn" id="5_yynrv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v8qbr"]
 size = Vector2(396, 123)
@@ -38,3 +39,6 @@ position = Vector2(172, -49)
 
 [node name="Orb" parent="." unique_id=272773964 instance=ExtResource("3_v8qbr")]
 position = Vector2(295, -169)
+
+[node name="AnimatableBody2D" parent="." unique_id=1441206593 instance=ExtResource("5_yynrv")]
+position = Vector2(47, -81)
