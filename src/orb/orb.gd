@@ -47,7 +47,9 @@ func _input(event: InputEvent) -> void:
 		$Arrow.visible = true
 		
 		# Darken background
-		$CanvasLayer/Background.visible = true
+		$CanvasModulate.visible = true
+		modulate = Color(2, 2, 2)
+		player_node.modulate = Color(2, 2, 2)
 		orb_focused.emit()
 	elif event.is_action_released("interact"):
 		# Reset interaction
@@ -75,7 +77,9 @@ func _input(event: InputEvent) -> void:
 		$Arrow.rotation_degrees = 0.0
 		arrow_direction = starting_arrow_direction
 		
-		$CanvasLayer/Background.visible = false
+		$CanvasModulate.visible = false
+		modulate = Color(1, 1, 1)
+		player_node.modulate = Color(1, 1, 1)
 		orb_unfocused.emit()
 		
 		# Perform the scheduled _on_body_exited() code as needed

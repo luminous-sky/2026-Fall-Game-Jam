@@ -91,6 +91,14 @@ sources/1 = SubResource("TileSetAtlasSource_76ugp")
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ba34"]
 load_path = "res://.godot/imported/background_1.png-1c1e307303b20809e10bc4abbb2febaa.ctex"
 
+[sub_resource type="Gradient" id="Gradient_ldkys"]
+offsets = PackedFloat32Array(0, 0.20481928)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w81ou"]
+gradient = SubResource("Gradient_ldkys")
+width = 1008
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_py88r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g1dg4"]
@@ -118,7 +126,24 @@ position = Vector2(504, -283.5)
 scale = Vector2(7, 7)
 texture = SubResource("CompressedTexture2D_8ba34")
 region_enabled = true
-region_rect = Rect2(144, 189, 144, 81)
+region_rect = Rect2(0, 189, 144, 81)
+
+[node name="Shade" type="ColorRect" parent="Background" unique_id=159085593]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -71.85714
+offset_top = -40.5
+offset_right = -71.85714
+offset_bottom = -40.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.49019608)
+
+[node name="BackgroundFade" type="TextureRect" parent="." unique_id=1627384588]
+offset_top = -564.0
+offset_right = 1008.0
+texture = SubResource("GradientTexture1D_w81ou")
 
 [node name="Player" parent="." unique_id=1360005317 instance=ExtResource("6_upukb")]
 position = Vector2(50, -99)

@@ -55,6 +55,9 @@ var can_move: bool = true
 @onready var default_camera_zoom = $Camera2D.zoom
 
 func _ready() -> void:
+	# Reset the cooldown
+	cooldown_time = 0.0
+	
 	# Check if the parent is a level to constrain the camera
 	if get_parent() is Level:
 		var level: Level = get_parent()

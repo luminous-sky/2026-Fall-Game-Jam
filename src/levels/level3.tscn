@@ -89,9 +89,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_qyb5k")
 sources/1 = SubResource("TileSetAtlasSource_76ugp")
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ba34"]
-load_path = "res://.godot/imported/background_1.png-1c1e307303b20809e10bc4abbb2febaa.ctex"
-
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_py88r"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g1dg4"]
@@ -116,12 +113,10 @@ z_index = 2
 tile_map_data = PackedByteArray("AAAFAP3/AAABAAEAAAAGAP3/AAACAAEAAAAGAP7/AAACAAEAAAAGAP//AAACAAEAAAAMAPv/AAAAAAAAAAANAPv/AAABAAAAAAAOAPv/AAABAAAAAAAPAPv/AAABAAAAAAAQAPv/AAABAAAAAAARAPv/AAABAAAAAAASAPv/AAABAAAAAAATAPv/AAACAAAAAAATAPz/AAACAAEAAAATAP3/AAACAAEAAAATAP7/AAACAAEAAAATAP//AAACAAEAAAAcAPr/AAAAAAEAAAAcAPv/AAAAAAEAAAAcAPz/AAAAAAEAAAAcAP3/AAAAAAEAAAAcAP7/AAAAAAEAAAAcAP//AAAAAAEAAAAfAPj/AAABAAAAAAAcAPj/AAAAAAAAAAAdAPj/AAABAAAAAAAeAPj/AAABAAAAAAAcAPn/AAAAAAEAAAD///f/AAAAAAAAAAAAAPf/AAABAAAAAAABAPf/AAABAAAAAAACAPf/AAABAAAAAAADAPf/AAABAAAAAAAEAPf/AAACAAAAAAAEAPj/AQAAAAEAAAAFAPj/AAABAAAAAAAGAPj/AAACAAAAAAAKAPz/AAAAAAAAAAALAPz/AAABAAAAAAAKAP3/AAAAAAEAAAAKAP7/AAAAAAEAAAAKAP//AAAAAAEAAAAMAPz/AQABAAEAAAAGAPz/AAACAAEAAAAGAPv/AAACAAEAAAAGAPr/AAACAAEAAAAGAPn/AAACAAEAAAAgAPj/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_w81ou")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1787024686]
-position = Vector2(504, -283.5)
-scale = Vector2(7, 7)
-texture = SubResource("CompressedTexture2D_8ba34")
-region_enabled = true
-region_rect = Rect2(144, 189, 144, 81)
+[node name="Background" type="ColorRect" parent="." unique_id=213379927]
+offset_top = -567.0
+offset_right = 1008.0
+color = Color(0.056291588, 0.056291603, 0.056291595, 1)
 
 [node name="Player" parent="." unique_id=1360005317 instance=ExtResource("6_mf7v1")]
 position = Vector2(52, -324)
