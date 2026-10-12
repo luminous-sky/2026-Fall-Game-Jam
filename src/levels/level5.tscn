@@ -1,0 +1,144 @@
+[gd_scene format=4 uid="uid://0ptl7ma1edsj"]
+
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_vp6pq"]
+[ext_resource type="Texture2D" uid="uid://cix2yxyc3ra5n" path="res://assets/world/tiles/icy.png" id="2_66nwl"]
+[ext_resource type="Texture2D" uid="uid://s6sq5kmnfqg0" path="res://assets/world/tiles/icy_corner.png" id="3_t5gjd"]
+[ext_resource type="Texture2D" uid="uid://xj405n8frtbp" path="res://assets/world/tiles/snowy.png" id="4_1oekh"]
+[ext_resource type="Texture2D" uid="uid://be7dmy4jlbdv8" path="res://assets/world/tiles/snowy_corner.png" id="5_d4v0i"]
+[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="6_upukb"]
+[ext_resource type="PackedScene" uid="uid://cla3ludyds7q0" path="res://crystals/shard.tscn" id="7_ldkys"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_py88r"]
+texture = ExtResource("2_66nwl")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s1bpp"]
+texture = ExtResource("3_t5gjd")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_8vqkf"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_py88r")
+sources/1 = SubResource("TileSetAtlasSource_s1bpp")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyb5k"]
+texture = ExtResource("4_1oekh")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_76ugp"]
+texture = ExtResource("5_d4v0i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_w81ou"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qyb5k")
+sources/1 = SubResource("TileSetAtlasSource_76ugp")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ba34"]
+load_path = "res://.godot/imported/background_1.png-1c1e307303b20809e10bc4abbb2febaa.ctex"
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_py88r"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g1dg4"]
+
+[node name="Level5" type="Node2D" unique_id=1789067532]
+script = ExtResource("1_vp6pq")
+left_bound = 0
+right_bound = 1008
+upper_bound = -567
+lower_bound = 0
+zoom_override = 1.2
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1499008500]
+z_index = 1
+tile_map_data = PackedByteArray("AAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAABAAAAAAAMAP7/AAABAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP3/AAAAAAAAAAASAPz/AAAAAAAAAAATAPz/AAABAAAAAAAUAPz/AAACAAAAAAAVAP3/AAACAAAAAAAVAP7/AAACAAEAAAAVAP//AAACAAEAAAARAP3/AAABAAAAAAASAP3/AQABAAEAAAATAP3/AAABAAEAAAAUAP3/AQAAAAEAAAAQAP7/AQABAAEAAAARAP7/AAABAAEAAAASAP7/AAABAAEAAAATAP7/AAABAAEAAAAUAP7/AAABAAEAAAD/////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAFAP//AAABAAEAAAAGAP//AAABAAEAAAAHAP//AAABAAEAAAAIAP//AAABAAEAAAAJAP//AAABAAEAAAAKAP//AAABAAEAAAALAP//AAABAAEAAAAMAP//AAABAAEAAAANAP//AAABAAEAAAAOAP//AAABAAEAAAAPAP//AAABAAEAAAAQAP//AAABAAEAAAARAP//AAABAAEAAAASAP//AAABAAEAAAATAP//AAABAAEAAAAUAP//AAABAAEAAAD///7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_8vqkf")
+
+[node name="Surface" type="TileMapLayer" parent="." unique_id=1282638718]
+z_index = 2
+tile_map_data = PackedByteArray("AAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAABAAAAAAAMAP7/AAABAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAARAP3/AAABAAAAAAATAPz/AAABAAAAAAAVAP7/AAACAAEAAAAVAP//AAACAAEAAAAUAPz/AAACAAAAAAAVAP3/AAACAAAAAAD///7/AAAAAAAAAAAQAP3/AAAAAAAAAAASAPz/AAAAAAAAAAAUAP3/AQAAAAEAAAASAP3/AQABAAEAAAAQAP7/AQABAAEAAAA=")
+tile_set = SubResource("TileSet_w81ou")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1787024686]
+position = Vector2(504, -283.5)
+scale = Vector2(7, 7)
+texture = SubResource("CompressedTexture2D_8ba34")
+region_enabled = true
+region_rect = Rect2(144, 189, 144, 81)
+
+[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("6_upukb")]
+position = Vector2(50, -99)
+kill_y = 200.0
+
+[node name="Walls" type="Node" parent="." unique_id=902497870]
+
+[node name="Left" type="StaticBody2D" parent="Walls" unique_id=354786499]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left" unique_id=1589141995]
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_py88r")
+
+[node name="Right" type="StaticBody2D" parent="Walls" unique_id=338159067]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right" unique_id=1460874762]
+position = Vector2(1008, 0)
+rotation = 4.712389
+shape = SubResource("WorldBoundaryShape2D_g1dg4")
+
+[node name="Shard" parent="." unique_id=509227634 instance=ExtResource("7_ldkys")]
+position = Vector2(626, -151)
+next_scene = "uid://2b26rfjwxgn1"
