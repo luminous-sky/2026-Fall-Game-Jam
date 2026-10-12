@@ -7,6 +7,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if not body is Player:
 		return
 	
+	var player: Player = body
+	
 	# Transition to next level
 	if next_scene:
-		get_tree().call_deferred("change_scene_to_file", next_scene)
+		player.can_move = false
+		Transition.transition_scene(next_scene)

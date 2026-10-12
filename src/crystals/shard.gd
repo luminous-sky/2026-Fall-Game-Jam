@@ -21,4 +21,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "destroy":
-		get_tree().call_deferred("change_scene_to_file", next_scene)
+		Transition.transition_scene(next_scene, 2.0)
