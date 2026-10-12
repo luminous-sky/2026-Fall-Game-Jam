@@ -184,3 +184,4 @@ position = Vector2(619, -291)
 
 [node name="Shard" parent="." unique_id=509227634 instance=ExtResource("9_mdqcw")]
 position = Vector2(37, -124)
+next_scene = "uid://b65uht1740eys"
