@@ -6,14 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="4_4yi4c"]
 [ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="5_wup6e"]
 
-[node name="airlvl2" type="Node2D" unique_id=195146555]
+[node name="Main7" type="Node2D" unique_id=195146555]
 script = ExtResource("1_tiqm2")
 left_bound = -768
 right_bound = 768
 upper_bound = -432
 lower_bound = 432
+current_area = 1
 
-[node name="bg" type="Sprite2D" parent="." unique_id=712318020]
+[node name="Background" type="Sprite2D" parent="." unique_id=712318020]
 scale = Vector2(3.2, 3.2)
 texture = ExtResource("2_x5kvc")
 

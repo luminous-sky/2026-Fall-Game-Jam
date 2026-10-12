@@ -105,6 +105,7 @@ right_bound = 1008
 upper_bound = -567
 lower_bound = 0
 zoom_override = 1.2
+current_area = 1
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=74070386]
 z_index = 1
@@ -113,6 +114,7 @@ tile_set = SubResource("TileSet_wmv1f")
 
 [node name="Surface" type="TileMapLayer" parent="." unique_id=1415330194]
 z_index = 2
+tile_map_data = PackedByteArray("AAD///z/AAABAAAAAAAAAPz/AAABAAAAAAABAPz/AAABAAAAAAACAPz/AAABAAAAAAADAPz/AAABAAAAAAAfAPz/AAABAAIAAAAbAPX/AAABAAIAAAAcAPX/AAABAAIAAAAEAP3/AAACAAEAAAAEAP7/AAACAAEAAAAEAP//AAACAAEAAAAEAAAAAAACAAEAAAAEAPz/AAACAAAAAAAeAPz/AAAAAAIAAAAdAPn/AAAAAAIAAAAaAPX/AAAAAAIAAAAaAO7/AAAAAAEAAAAaAO//AAAAAAEAAAAaAPD/AAAAAAEAAAAaAPH/AAAAAAEAAAAaAPL/AAAAAAEAAAAaAPP/AAAAAAEAAAAaAPT/AAAAAAEAAAAdAPb/AAAAAAEAAAAdAPf/AAAAAAEAAAAdAPj/AAAAAAEAAAAeAPr/AAAAAAEAAAAeAPv/AAAAAAEAAAAeAPn/AQABAAAAAAAdAPX/AQABAAAAAAA=")
 tile_set = SubResource("TileSet_ysf2h")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1404644009]
@@ -149,6 +151,7 @@ shape = SubResource("WorldBoundaryShape2D_bidye")
 
 [node name="Shard" parent="." unique_id=509227634 instance=ExtResource("9_0hrqv")]
 position = Vector2(289, -478)
+next_scene = "uid://b43apte5jl588"
 
 [node name="MovingPlatform" parent="." unique_id=1441206593 instance=ExtResource("10_bmuh1")]
 position = Vector2(206, -126)

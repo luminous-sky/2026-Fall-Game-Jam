@@ -1,15 +1,16 @@
 [gd_scene format=4 uid="uid://b43apte5jl588"]
 
-[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_eibbu"]
-[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="1_ux5ys"]
-[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="2_6o41n"]
-[ext_resource type="Texture2D" uid="uid://cix2yxyc3ra5n" path="res://assets/world/tiles/icy.png" id="3_tvhyq"]
-[ext_resource type="Texture2D" uid="uid://xj405n8frtbp" path="res://assets/world/tiles/snowy.png" id="4_tvhyq"]
-[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="5_0sdp6"]
-[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="6_0sdp6"]
+[ext_resource type="Script" uid="uid://dh7ileu7g5w5k" path="res://levels/level.gd" id="1_u0dow"]
+[ext_resource type="Texture2D" uid="uid://7bv6dchaqvw0" path="res://assets/world/background_1.png" id="2_aus3q"]
+[ext_resource type="PackedScene" uid="uid://wwyd25gqit03" path="res://player/player.tscn" id="3_26sf2"]
+[ext_resource type="Texture2D" uid="uid://cix2yxyc3ra5n" path="res://assets/world/tiles/icy.png" id="4_yf4mh"]
+[ext_resource type="Texture2D" uid="uid://xj405n8frtbp" path="res://assets/world/tiles/snowy.png" id="5_e517r"]
+[ext_resource type="PackedScene" uid="uid://cjlqupnnv4qfc" path="res://platforms/one_way_platform.tscn" id="6_3ymuw"]
+[ext_resource type="PackedScene" uid="uid://8lu4be188f5m" path="res://platforms/long_one_way_platform.tscn" id="7_aus3q"]
+[ext_resource type="PackedScene" uid="uid://deoxfbibexelg" path="res://orb/orb.tscn" id="7_tguba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urlp7"]
-texture = ExtResource("3_tvhyq")
+texture = ExtResource("4_yf4mh")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -88,7 +89,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_urlp7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eibbu"]
-texture = ExtResource("4_tvhyq")
+texture = ExtResource("5_e517r")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -115,19 +116,23 @@ texture = ExtResource("4_tvhyq")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_eibbu")
 
-[node name="ground2airlvl" type="Node2D" unique_id=705614531]
-script = ExtResource("1_eibbu")
+[node name="Main5" type="Node2D" unique_id=705614531]
+script = ExtResource("1_u0dow")
 left_bound = 0
-right_bound = 790
-upper_bound = -650
-lower_bound = 220
+right_bound = 1008
+upper_bound = -342
+lower_bound = 225
+zoom_override = 1.2
+current_area = 1
 
-[node name="bg" type="Sprite2D" parent="." unique_id=913217523]
-position = Vector2(33, -211)
-scale = Vector2(3.1789353, 3.1789353)
-texture = ExtResource("1_ux5ys")
+[node name="Background" type="Sprite2D" parent="." unique_id=913217523]
+position = Vector2(504, -59.000008)
+scale = Vector2(7, 7)
+texture = ExtResource("2_aus3q")
+region_enabled = true
+region_rect = Rect2(0, 80, 144, 81)
 
-[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("2_6o41n")]
+[node name="Player" parent="." unique_id=1360005317 instance=ExtResource("3_26sf2")]
 position = Vector2(34, 157)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1020899752]
@@ -138,17 +143,17 @@ tile_set = SubResource("TileSet_b0kfa")
 tile_map_data = PackedByteArray("AAAAAAsAAAAAAAAAAAABAAsAAAABAAAAAAACAAsAAAACAAAAAAADAAsAAAADAAAAAAAEAAsAAAAFAAAAAAAAAAwAAAAAAAEAAAAAAA0AAAAAAAEAAAAEAAwAAAAFAAEAAAAEAA0AAAAFAAMAAAAPAA0AAAAFAAMAAAAPAAwAAAAFAAIAAAAPAAsAAAAFAAEAAAAPAAkAAAAFAAQAAAAPAAoAAAAFAAQAAAAPAAgAAAAFAAMAAAAPAAcAAAAFAAMAAAALAAcAAAAAAAEAAAALAAgAAAAAAAIAAAALAAsAAAAAAAQAAAALAAkAAAAAAAMAAAALAAoAAAAAAAMAAAALAAwAAAAAAAMAAAALAA0AAAAAAAMAAAANAAYAAAACAAAAAAAMAAYAAAACAAAAAAAOAAYAAAAEAAAAAAAPAAYAAAAFAAAAAAALAAYAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_wpnqn")
 
-[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("5_0sdp6")]
-position = Vector2(337, 29)
+[node name="OneWayPlatform" parent="." unique_id=331782779 instance=ExtResource("6_3ymuw")]
+position = Vector2(357, 30)
 
-[node name="OneWayPlatform2" parent="." unique_id=460871666 instance=ExtResource("5_0sdp6")]
-position = Vector2(673, -149)
+[node name="OneWayPlatform2" parent="." unique_id=273165160 instance=ExtResource("7_aus3q")]
+position = Vector2(698, -75)
 
-[node name="OneWayPlatform3" parent="." unique_id=1268889704 instance=ExtResource("5_0sdp6")]
-position = Vector2(765, -231)
+[node name="OneWayPlatform3" parent="." unique_id=1268889704 instance=ExtResource("6_3ymuw")]
+position = Vector2(772, -215)
 
-[node name="OneWayPlatform4" parent="." unique_id=1999363409 instance=ExtResource("5_0sdp6")]
-position = Vector2(715, -231)
+[node name="OneWayPlatform4" parent="." unique_id=1999363409 instance=ExtResource("6_3ymuw")]
+position = Vector2(722, -215)
 
-[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("6_0sdp6")]
-position = Vector2(483, -78)
+[node name="Orb" parent="." unique_id=272773964 instance=ExtResource("7_tguba")]
+position = Vector2(492, -67)
