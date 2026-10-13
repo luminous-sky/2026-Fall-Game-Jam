@@ -54,6 +54,8 @@ var can_move: bool = true
 
 @onready var default_camera_zoom = $Camera2D.zoom
 
+@onready var footsteps_sfx: AudioStreamPlayer2D = $FootstepsSnow
+
 func _ready() -> void:
 	# Reset the cooldown
 	cooldown_time = 0.0
@@ -71,10 +73,20 @@ func _ready() -> void:
 			$Camera2D.zoom = level.zoom_override * Vector2(1, 1)
 		else:
 			$Camera2D.zoom = default_camera_zoom
+		
+		
+		# Select footstep sound effect
+		if level.current_area == GameData.AREAS.MAIN or level.current_area == GameData.AREAS.INTRO:
+			footsteps_sfx = $FootstepsSnow
+		elif level.current_area == GameData.AREAS.FINAL:
+			footsteps_sfx = $FootstepsMetal
 
 
 func _physics_process(delta: float) -> void:
 	if not can_move:
+		if footsteps_sfx.playing:
+			footsteps_sfx.stop()
+		
 		return
 	
 	# Reset dash after the cooldown is over
@@ -135,6 +147,12 @@ func _physics_process(delta: float) -> void:
 				anim_name += "left"
 			
 			$AnimatedSprite2D.play(anim_name)
+			
+			if not footsteps_sfx.playing:
+				footsteps_sfx.play()
+		else:
+			if footsteps_sfx.playing:
+				footsteps_sfx.stop()
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		
@@ -143,6 +161,9 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play("idle_right")
 			else:
 				$AnimatedSprite2D.play("idle_left")
+			
+			if footsteps_sfx.playing:
+				footsteps_sfx.stop()
 	
 	# Set y velocity
 	velocity.y = current_fall_speed
