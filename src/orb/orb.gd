@@ -86,6 +86,9 @@ func _input(event: InputEvent) -> void:
 		if player_released_scheduled:
 			player_node = null
 			player_released_scheduled = false
+		
+		# Play sound
+		$Launch.play()
 
 
 func _on_body_entered(body: Node2D) -> void:

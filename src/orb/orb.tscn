@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dsw27i730w37t" path="res://assets/world/orb.png" id="1_kjlvm"]
 [ext_resource type="Script" uid="uid://ch8nvexhaoy4e" path="res://orb/orb.gd" id="1_q0apk"]
 [ext_resource type="Texture2D" uid="uid://dtlbieqdibvn8" path="res://assets/world/arrow.png" id="3_nfcmq"]
+[ext_resource type="AudioStream" uid="uid://cp33ysyryq0un" path="res://assets/player/sfx/launch.ogg" id="4_womfm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_moqhw"]
 radius = 56.0
@@ -26,6 +27,9 @@ shape = SubResource("CircleShape2D_moqhw")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1602714267]
 visible = false
 color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="Launch" type="AudioStreamPlayer2D" parent="." unique_id=563345020]
+stream = ExtResource("4_womfm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

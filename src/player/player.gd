@@ -179,6 +179,9 @@ func _physics_process(delta: float) -> void:
 		
 		# Launch velocity is cancelled out
 		current_launch = Vector2.ZERO
+		
+		# Play audio
+		$Dash.play()
 	
 	# Add launch velocity
 	velocity.x += current_launch.x

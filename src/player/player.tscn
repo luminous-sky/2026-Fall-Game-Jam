@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cfl5mj3f5styp" path="res://ui/dash_bar.tscn" id="15_wodsf"]
 [ext_resource type="AudioStream" uid="uid://dlfdovkkn06jd" path="res://assets/player/sfx/footsteps_snowy.ogg" id="16_tqiix"]
 [ext_resource type="AudioStream" uid="uid://bu45skdm252uj" path="res://assets/player/sfx/footsteps_metal.ogg" id="17_e7oew"]
+[ext_resource type="AudioStream" uid="uid://dtm1bey81eel3" path="res://assets/player/sfx/dash.ogg" id="18_e7oew"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hg6s5"]
 atlas = ExtResource("2_yw30f")
@@ -424,5 +425,8 @@ stream = ExtResource("16_tqiix")
 
 [node name="FootstepsMetal" type="AudioStreamPlayer2D" parent="." unique_id=681266740]
 stream = ExtResource("17_e7oew")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="." unique_id=1951601219]
+stream = ExtResource("18_e7oew")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
