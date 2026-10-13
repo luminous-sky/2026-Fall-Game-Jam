@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cx0hym6j8g08c" path="res://assets/world/music/main_area.mp3" id="3_yiyia"]
 [ext_resource type="AudioStream" uid="uid://b6eaf0ke02o1s" path="res://assets/world/music/final_area.ogg" id="4_o5ern"]
 [ext_resource type="AudioStream" uid="uid://d34xe0y7e7gd1" path="res://assets/world/music/credits.ogg" id="5_rqae5"]
+[ext_resource type="AudioStream" uid="uid://6vlfm6sj0hql" path="res://assets/world/music/wind_blowing.mp3" id="6_pi1vk"]
 
 [node name="Music" type="Node2D" unique_id=847927454]
 script = ExtResource("1_q3wc6")
@@ -26,3 +27,7 @@ bus = &"Music"
 stream = ExtResource("5_rqae5")
 volume_db = -10.0
 bus = &"Music"
+
+[node name="MainMenu" type="AudioStreamPlayer" parent="." unique_id=271110291]
+stream = ExtResource("6_pi1vk")
+volume_db = -7.5

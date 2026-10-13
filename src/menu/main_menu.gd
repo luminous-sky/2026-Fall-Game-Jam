@@ -14,8 +14,8 @@ func _ready() -> void:
 		if element is Button:
 			buttons.append(element)
 	
-	# Turn off music
-	Music.play_music_if_not_playing(Music.MUSIC_IDENTIFIER.NONE)
+	# Turn on wind
+	Music.play_music_if_not_playing(Music.MUSIC_IDENTIFIER.MAINMENU)
 
 
 func _input(event: InputEvent) -> void:
