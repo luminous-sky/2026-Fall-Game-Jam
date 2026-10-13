@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="2026 Fall Game Jam"
-run/main_scene="uid://bq7mtp314l80j"
+run/main_scene="uid://chk7q6vn8g6cu"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://dsw27i730w37t"
 
