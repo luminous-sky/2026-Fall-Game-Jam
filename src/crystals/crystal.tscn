@@ -1,0 +1,129 @@
+[gd_scene format=3 uid="uid://tmeoddf517d7"]
+
+[ext_resource type="Script" uid="uid://bage8sgciixxu" path="res://crystals/crystal.gd" id="1_p6scv"]
+[ext_resource type="Texture2D" uid="uid://d2lhwi50flc2i" path="res://assets/world/large_crystal.png" id="2_p6scv"]
+
+[sub_resource type="Animation" id="Animation_2xvka"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrystalSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrystalSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_grluv"]
+resource_name = "destroy"
+length = 3.0000000000000004
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrystalSprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.5666666, 1.7, 2),
+"transitions": PackedFloat32Array(0.75, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.612), Vector2(3, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CrystalSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 1.3, 1.55, 1.7, 1.8, 1.87, 1.94, 2),
+"transitions": PackedFloat32Array(1, 2.5, 2, 1.5, 1.5, 1.5, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, 0), Vector2(1.5, 0), Vector2(-1.5, 0), Vector2(1.5, 0), Vector2(-2, 0), Vector2(2, 0), Vector2(-2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xvka"]
+_data = {
+&"RESET": SubResource("Animation_2xvka"),
+&"destroy": SubResource("Animation_grluv")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1yb3l"]
+atlas = ExtResource("2_p6scv")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u8rsm"]
+atlas = ExtResource("2_p6scv")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn4rm"]
+atlas = ExtResource("2_p6scv")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfrox"]
+atlas = ExtResource("2_p6scv")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ljwl"]
+atlas = ExtResource("2_p6scv")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wa8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1yb3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u8rsm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gn4rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lfrox")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ljwl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moqhw"]
+size = Vector2(34, 76)
+
+[node name="Crystal" type="Area2D" unique_id=509227634]
+script = ExtResource("1_p6scv")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=495453280]
+libraries/ = SubResource("AnimationLibrary_2xvka")
+
+[node name="CrystalSprite" type="AnimatedSprite2D" parent="." unique_id=1777048831]
+sprite_frames = SubResource("SpriteFrames_2wa8a")
+autoplay = "default"
+frame_progress = 0.40116432
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=70646274]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_moqhw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
