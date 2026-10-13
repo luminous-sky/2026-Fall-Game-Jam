@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://5bqcb218i375"]
+
+[ext_resource type="Script" uid="uid://2pjsuqj6jbor" path="res://cutscenes/cutscene.gd" id="1_lqrdg"]
+[ext_resource type="VideoStream" uid="uid://x4kil2tfacvp" path="res://assets/cutscene/outro.ogv" id="2_lqrdg"]
+
+[node name="OutroCutscene" type="Control" unique_id=1670136209]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lqrdg")
+next_scene = "uid://cquqvc4da7olt"
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=1008477971]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_lqrdg")
+autoplay = true
+expand = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

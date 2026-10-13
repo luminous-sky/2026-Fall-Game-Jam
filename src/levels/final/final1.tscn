@@ -270,3 +270,4 @@ position = Vector2(1426, -729)
 
 [node name="Crystal" parent="." unique_id=509227634 instance=ExtResource("13_lr6uq")]
 position = Vector2(1199, -905)
+next_scene = "uid://5bqcb218i375"
