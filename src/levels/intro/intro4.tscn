@@ -103,13 +103,14 @@ width = 1008
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_g1dg4"]
 
-[node name="Level5" type="Node2D" unique_id=1789067532]
+[node name="Level4" type="Node2D" unique_id=1789067532]
 script = ExtResource("1_vp6pq")
 left_bound = 0
 right_bound = 1008
 upper_bound = -567
 lower_bound = 0
 zoom_override = 1.2
+music_identifier = 1
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1499008500]
 z_index = 1
@@ -166,4 +167,4 @@ shape = SubResource("WorldBoundaryShape2D_g1dg4")
 
 [node name="Shard" parent="." unique_id=509227634 instance=ExtResource("7_ldkys")]
 position = Vector2(626, -151)
-next_scene = "uid://2b26rfjwxgn1"
+next_scene = "uid://c14i7qwyh46l1"

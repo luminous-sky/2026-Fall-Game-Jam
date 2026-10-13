@@ -16,6 +16,7 @@ upper_bound = -589
 lower_bound = 251
 zoom_override = 1.2
 current_area = 1
+music_identifier = 2
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1888593502]
 position = Vector2(345, -169)

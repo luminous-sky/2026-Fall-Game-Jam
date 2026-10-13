@@ -13,6 +13,9 @@ func _ready() -> void:
 	for element in get_children():
 		if element is Button:
 			buttons.append(element)
+	
+	# Turn off music
+	Music.play_music_if_not_playing(Music.MUSIC_IDENTIFIER.NONE)
 
 
 func _input(event: InputEvent) -> void:

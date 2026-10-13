@@ -97,13 +97,14 @@ sources/1 = SubResource("TileSetAtlasSource_76ugp")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w81ou"]
 size = Vector2(45, 279)
 
-[node name="Level4" type="Node2D" unique_id=1789067532]
+[node name="Level3" type="Node2D" unique_id=1789067532]
 script = ExtResource("1_mj76i")
 left_bound = 0
 right_bound = 1008
 upper_bound = -567
 lower_bound = 0
 zoom_override = 1.2
+music_identifier = 1
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1499008500]
 z_index = 1

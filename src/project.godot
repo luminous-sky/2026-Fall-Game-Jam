@@ -19,6 +19,7 @@ config/icon="uid://dsw27i730w37t"
 
 Transition="*uid://vjnbxmdox3ho"
 GameData="*uid://bhtqmqlbv3j7g"
+Music="*uid://cl6cop20c6dkq"
 
 [display]
 

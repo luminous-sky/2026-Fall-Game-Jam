@@ -101,6 +101,7 @@ upper_bound = -1350
 lower_bound = 0
 zoom_override = 1.2
 current_area = 2
+music_identifier = 3
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=769364395]
 z_index = 1

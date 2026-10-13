@@ -12,6 +12,7 @@ extends Node2D
 @export var zoom_override: float
 
 @export var current_area: GameData.AREAS
+@export var music_identifier: Music.MUSIC_IDENTIFIER
 
 
 # On level load, save the current level and area
@@ -21,3 +22,5 @@ func _ready() -> void:
 	GameData.current_area = current_area
 	GameData.current_level = current_level
 	GameData.save_data()
+	
+	Music.play_music_if_not_playing(music_identifier)

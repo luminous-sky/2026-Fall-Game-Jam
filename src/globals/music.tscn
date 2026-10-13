@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cl6cop20c6dkq"]
+
+[ext_resource type="Script" uid="uid://beb5jqlewwbfn" path="res://globals/music.gd" id="1_q3wc6"]
+[ext_resource type="AudioStream" uid="uid://bgmkysjyafix1" path="res://assets/world/music/intro_area.ogg" id="2_3l76d"]
+[ext_resource type="AudioStream" uid="uid://cx0hym6j8g08c" path="res://assets/world/music/main_area.mp3" id="3_yiyia"]
+[ext_resource type="AudioStream" uid="uid://b6eaf0ke02o1s" path="res://assets/world/music/final_area.ogg" id="4_o5ern"]
+[ext_resource type="AudioStream" uid="uid://d34xe0y7e7gd1" path="res://assets/world/music/credits.ogg" id="5_rqae5"]
+
+[node name="Music" type="Node2D" unique_id=847927454]
+script = ExtResource("1_q3wc6")
+
+[node name="Intro" type="AudioStreamPlayer" parent="." unique_id=1952954561]
+stream = ExtResource("2_3l76d")
+bus = &"Music"
+
+[node name="Main" type="AudioStreamPlayer" parent="." unique_id=1138688654]
+stream = ExtResource("3_yiyia")
+volume_db = -10.0
+bus = &"Music"
+
+[node name="Final" type="AudioStreamPlayer" parent="." unique_id=719998918]
+stream = ExtResource("4_o5ern")
+bus = &"Music"
+
+[node name="Credits" type="AudioStreamPlayer" parent="." unique_id=672612830]
+stream = ExtResource("5_rqae5")
+volume_db = -10.0
+bus = &"Music"
